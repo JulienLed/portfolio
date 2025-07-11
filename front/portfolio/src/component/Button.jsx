@@ -1,13 +1,8 @@
 import styles from "./Button.module.css";
 
-function Button() {
+function Button({ onClick }) {
   return (
-    <div
-      className={styles.arrow}
-      onClick={handleClick}
-      role="button"
-      tabIndex={0}
-    >
+    <div onClick={onClick} className={styles.arrow}>
       <div className={styles.line1}></div>
       <div className={styles.line2}></div>
       <div className={styles.line3}></div>

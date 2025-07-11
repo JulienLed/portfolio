@@ -4,7 +4,7 @@
   justify-content: center;
   width: 5vw;
   height: 60px;
-  margin: 30vw auto;
+  margin: 35vw auto 0;
   animation: bounce 2s infinite, appear 10s forwards;
   transition: animation ease 0.3s;
   opacity: 0;

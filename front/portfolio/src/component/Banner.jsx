@@ -1,4 +1,5 @@
 import styles from "./Banner.module.css";
+import photo from "../assets/Photo Ju.png";
 
 function Banner() {
   return (
@@ -12,6 +13,7 @@ function Banner() {
           <p className={styles.p3}>Concevoir</p>
         </div>
       </div>
+      <img className={styles.photo} src={photo}></img>
     </>
   );
 }

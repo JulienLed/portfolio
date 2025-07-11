@@ -46,7 +46,7 @@ h1 {
   border-left: 2px solid var(--white);
   transform: scaleY(0);
   transform-origin: bottom;
-  animation: grow 0.7s ease-out forwards 1.7s;
+  animation: grow 2s ease-out forwards 1.7s;
 }
 
 .descript3Words {
@@ -70,4 +70,18 @@ h1 {
   to {
     transform: scaleY(1);
   }
+}
+
+/*Photo*/
+
+.photo {
+  position: absolute;
+  right: 15vw;
+  top: 13vw;
+  width: 25vw;
+  height: auto;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 100px;
+  animation: fadein e;
 }

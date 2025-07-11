@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 import styles from "../component/AboutMe.module.css";
 
-const AboutMe = () => {
+const AboutMe = forwardRef((props, ref) => {
   const pointerRef = useRef(null);
   const aboutRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -42,7 +42,10 @@ const AboutMe = () => {
     <>
       <div ref={pointerRef} className={styles.pointer}></div>
       <div
-        ref={aboutRef}
+        ref={(el) => {
+          aboutRef.current = el;
+          if (ref) ref.current = el;
+        }}
         className={`${styles.aboutMe} ${isVisible ? styles.scrolled : ""}`}
       >
         <p>
@@ -54,6 +57,6 @@ const AboutMe = () => {
       </div>
     </>
   );
-};
+});
 
 export default AboutMe;
