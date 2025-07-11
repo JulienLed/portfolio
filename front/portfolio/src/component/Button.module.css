@@ -1,0 +1,74 @@
+.arrow {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 5vw;
+  height: 60px;
+  margin: 30vw auto;
+  animation: bounce 2s infinite, appear 10s forwards;
+  transition: animation ease 0.3s;
+  opacity: 0;
+}
+
+.arrow:hover {
+  transform: scale(1.3);
+  transition: animation ease 0.3s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.line1,
+.line2,
+.line3,
+.line4 {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  height: 40px;
+  background-color: var(--white);
+}
+
+.line1 {
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  transform-origin: bottom;
+}
+
+.line2 {
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+  transform-origin: bottom;
+}
+
+.line3 {
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  transform-origin: bottom;
+}
+
+.line4 {
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+  transform-origin: bottom;
+}

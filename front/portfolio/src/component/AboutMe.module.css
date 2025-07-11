@@ -1,0 +1,27 @@
+.aboutMe {
+  color: var(--white);
+  font-family: var(--font);
+  font-size: 3vh;
+  margin-top: 100vh;
+  margin-left: 30vw;
+  margin-right: 10vw;
+  cursor: default;
+  opacity: 0;
+  transition: opacity ease-out 1s;
+}
+
+.scrolled {
+  opacity: 1;
+  transition: opacity ease-in 1s;
+}
+
+.pointer {
+  z-index: 0;
+  position: fixed;
+  width: 150px;
+  height: 150px;
+  background-color: var(--purple-2);
+  border-radius: 50%;
+  filter: blur(130px);
+  pointer-events: none;
+}

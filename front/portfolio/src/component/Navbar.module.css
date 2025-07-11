@@ -1,0 +1,49 @@
+.navbar {
+  display: flex;
+  justify-content: right;
+  margin-right: 10vw;
+  padding: 0 1vw;
+  gap: 7vw;
+  color: var(--white);
+  font-family: var(--font);
+  font-size: 1.5vw;
+}
+
+.navbar span {
+  display: inline-block;
+  color: var(--white);
+  opacity: 0;
+  transition: text-shadow ease-out 0.3s;
+}
+
+.navbar span.one {
+  animation: appear ease 2s forwards;
+  animation-delay: 0.3s;
+}
+
+.navbar span.two {
+  animation: appear ease 2s forwards;
+  animation-delay: 0.6s;
+}
+
+.navbar span.three {
+  animation: appear ease 2s forwards;
+  animation-delay: 1s;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.navbar span:hover {
+  z-index: 1;
+  text-shadow: 0 0 40px blue, 2px 2px 15px white, -2px -2px 15px white,
+    -2px 2px 15px white, 2px -2px 15px white;
+  transition: text-shadow ease-in 0.3s;
+  cursor: pointer;
+}

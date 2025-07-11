@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #0e0e10;
+}
+
+.blop1 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--purple-1), var(--purple-2));
+  border-radius: 50%;
+  filter: blur(120px);
+}
+.blop2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--blue-1), var(--blue-2));
+  border-radius: 50%;
+  filter: blur(120px);
+}
+
+:root {
+  /*Colors*/
+  --purple-1: #9f3ff9c4;
+  --purple-2: #7e22cec7;
+  --blue-1: #2fbcf9c0;
+  --blue-2: #0aa2e8bd;
+  --white: rgb(220, 220, 220);
+
+  /*Font*/
+  --font: "Tomorrow", sans-serif;
+}
