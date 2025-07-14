@@ -1,12 +1,24 @@
 .navbar {
+  position: fixed;
   display: flex;
-  justify-content: right;
-  margin-right: 10vw;
-  padding: 0 1vw;
+  justify-content: flex-end;
+  width: 90%;
+  padding: 0;
+  margin: 0;
   gap: 7vw;
   color: var(--white);
   font-family: var(--font);
   font-size: 1.5vw;
+  z-index: 99;
+}
+
+.navbar_bg {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 5vh;
+  background-color: blue;
 }
 
 .navbar span {
@@ -44,6 +56,6 @@
   z-index: 1;
   text-shadow: 0 0 40px blue, 2px 2px 15px white, -2px -2px 15px white,
     -2px 2px 15px white, 2px -2px 15px white;
-  transition: text-shadow ease-in 0.3s;
+  transition: text-shadow ease-in 0.1s;
   cursor: pointer;
 }

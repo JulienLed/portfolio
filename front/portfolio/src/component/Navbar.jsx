@@ -9,6 +9,7 @@ function Navbar() {
         <span className={styles.two}>Projets</span>
         <span className={styles.three}>Contact</span>
       </div>
+      <div className={styles.navbar_bg}></div>
     </>
   );
 }

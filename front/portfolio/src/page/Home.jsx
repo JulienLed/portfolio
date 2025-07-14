@@ -15,7 +15,7 @@ function Home() {
       <Navbar />
       <Banner />
       <Button onClick={handleClick} />
-      <AboutMe ref={aboutMeRef} />
+      <AboutMe />
     </>
   );
 }
