@@ -1,3 +1,24 @@
 video {
-  width: 500px;
+  width: 30vw;
+  height: auto;
+}
+
+.projets {
+  width: 30vw;
+  height: auto;
+  margin: 0 auto;
+}
+
+.project1,
+.project2,
+.project3 {
+  color: var(--white);
+  font-family: var(--font);
+  font-size: 1rem;
+  margin: 1vw 0;
+}
+
+.project2 p,
+.project3 p {
+  text-align: center;
 }
