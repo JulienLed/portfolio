@@ -3,8 +3,6 @@ import styles from "../component/AboutMe.module.css";
 
 const AboutMe = () => {
   const pointerRef = useRef(null);
-  const textRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
   const [opacity, setOpacity] = useState(1);
 
   // Pointeur qui suit la souris
@@ -17,27 +15,6 @@ const AboutMe = () => {
     };
     document.addEventListener("mousemove", handleMouseMove);
     return () => document.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
-  // Afficher quand on scroll
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      {
-        threshold: 0.1,
-      }
-    );
-    if (textRef.current) {
-      observer.observe(textRef.current);
-    }
-    return () => {
-      if (textRef.current) observer.unobserve(textRef.current);
-    };
   }, []);
 
   // Afficher progressivement quand on scroll

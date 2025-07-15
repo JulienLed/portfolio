@@ -21,7 +21,7 @@ function Banner() {
   }, []);
 
   return (
-    <div style={{ opacity }}>
+    <div className={styles.banner} style={{ opacity }}>
       <h1 className={styles}>Julien, Developpeur Web</h1>
       <div className={styles.line3WordsContainer}>
         <div className={styles.line}></div>
