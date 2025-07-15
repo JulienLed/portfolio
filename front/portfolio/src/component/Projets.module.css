@@ -1,12 +1,13 @@
 video {
-  width: 30vw;
+  width: 45vw;
   height: auto;
 }
 
 .projets {
-  width: 30vw;
+  width: 50vw;
   height: auto;
   margin: 0 auto;
+  border-color: red;
 }
 
 .project1,
@@ -18,7 +19,18 @@ video {
   margin: 1vw 0;
 }
 
+.project1 {
+  margin: 0 auto;
+}
+
 .project2 p,
 .project3 p {
   text-align: center;
+}
+
+video {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
 }

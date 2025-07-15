@@ -1,6 +1,6 @@
 import styles from "./Button.module.css";
 
-function Button() {
+export function ButtonScrollDown() {
   return (
     <div className={styles.arrow}>
       <div className={styles.line1}></div>
@@ -11,4 +11,20 @@ function Button() {
   );
 }
 
-export default Button;
+export function ButtonSliderNext(props) {
+  const { onClick } = props;
+  return (
+    <div className={styles.arrowNext} onClick={onClick}>
+      Next
+    </div>
+  );
+}
+
+export function ButtonSliderPrev(props) {
+  const { onClick } = props;
+  return (
+    <div className={styles.arrowPrev} onClick={onClick}>
+      Prev
+    </div>
+  );
+}

@@ -4,6 +4,7 @@ import videoSrc from "../assets/Web App AS.mp4";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { ButtonSliderNext, ButtonSliderPrev } from "./Button";
 
 function Projets() {
   const [opacity, setOpacity] = useState(1);
@@ -16,8 +17,10 @@ function Projets() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
+    nextArrow: <ButtonSliderNext />,
+    prevArrow: <ButtonSliderPrev />,
   };
 
   //Lancer à vidéo à 6 secondes

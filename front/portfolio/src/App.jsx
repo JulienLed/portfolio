@@ -5,8 +5,15 @@ import Home from "./page/Home.jsx";
 function App() {
   return (
     <>
-      <div className="blop1" style={{ top: "10rem", left: "3rem" }}></div>
-      <div className="blop2" style={{ top: "22rem", right: "4rem" }}></div>
+      <div className="blop1" style={{ top: "4%", left: "6%" }}></div>
+      <div className="blop2" style={{ top: "18%", right: "8%" }}></div>
+
+      <div className="blop1" style={{ top: "72%", left: "4%" }}></div>
+
+      <div className="blop2" style={{ top: "129%", right: "6%" }}></div>
+      <div className="blop1" style={{ top: "190%", left: "9%" }}></div>
+      <div className="blop2" style={{ top: "250%", right: "4%" }}></div>
+
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
