@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "../component/AboutMe.module.css";
 
-const AboutMe = () => {
+const AboutMe = ({ aboutRef }) => {
   const pointerRef = useRef(null);
   const [opacity, setOpacity] = useState(1);
 
@@ -35,7 +35,7 @@ const AboutMe = () => {
   return (
     <>
       <div ref={pointerRef} className={styles.pointer}></div>
-      <div className={styles.aboutMe} style={{ opacity }}>
+      <div ref={aboutRef} className={styles.aboutMe} style={{ opacity }}>
         <h3>A Propos de moi</h3>
         <p>
           <span>Développeur Full Stack</span> autodidacte, je suis également

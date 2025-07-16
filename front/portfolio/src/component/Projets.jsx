@@ -53,21 +53,32 @@ function Projets() {
       <div className={styles.projets}>
         <Slider {...settings}>
           <div className={styles.project1}>
-            <h4>
-              Web App AS : Application web simple de prise de rendez-vous. La
-              première plage horaire disponible est définie lors de la prise de
-              rendez-vous, avec l'un des assistants sociaux disponibles sur la
-              plateforme.
-            </h4>
-            <video ref={videoRef} autoPlay muted loop>
-              <source src={videoSrc} type="video/mp4"></source>
-            </video>
+            <div className={styles.project1Text}>
+              <h4>
+                <span>Web App AS</span> :
+              </h4>
+              <p>
+                Application web simple de prise de rendez-vous. La première
+                plage horaire disponible est définie lors de la prise de
+                rendez-vous, avec l'un des assistants sociaux disponibles sur la
+                plateforme.
+              </p>
+            </div>
+            <a
+              href="https://webappas.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <video ref={videoRef} autoPlay muted loop>
+                <source src={videoSrc} type="video/mp4"></source>
+              </video>
+            </a>
           </div>
           <div className={styles.project2}>
-            <p>Projet en cours...</p>
+            <p>En construction...</p>
           </div>
           <div className={styles.project3}>
-            <p>Projet en cours...</p>
+            <p>En construction...</p>
           </div>
         </Slider>
       </div>

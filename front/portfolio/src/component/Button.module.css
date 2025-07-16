@@ -80,16 +80,44 @@
   color: var(--white);
   font-family: var(--font);
   font-size: 1rem;
+  z-index: 10;
+}
+
+.arrowPrev:active {
+  transform: translate(3px, 3px);
+}
+
+.arrowNext:active {
+  transform: translate(-3px, 3px);
+}
+
+.arrowNext img,
+.arrowPrev img {
+  width: 10vw;
+  height: auto;
+  transform: scaleX(0.7);
+  transition: filter 0.3s ease-in-out;
+}
+
+.arrowNext img:hover,
+.arrowPrev img:hover {
+  filter: drop-shadow(0 0 7px var(--white));
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrowPrev img {
+  transform: scaleX(-0.7);
 }
 
 .arrowNext {
   position: absolute;
-  top: 25vh;
-  right: -5vw;
+  top: 48%;
+  right: -10%;
 }
 
 .arrowPrev {
   position: absolute;
-  top: 25vh;
-  left: -5vw;
+  top: 48%;
+  left: -10%;
 }

@@ -6,13 +6,12 @@ function App() {
   return (
     <>
       <div className="blop1" style={{ top: "4%", left: "6%" }}></div>
-      <div className="blop2" style={{ top: "18%", right: "8%" }}></div>
+      <div className="blop2" style={{ top: "18%", right: "6%" }}></div>
 
-      <div className="blop1" style={{ top: "72%", left: "4%" }}></div>
+      <div className="blop2" style={{ top: "98%", left: "6%" }}></div>
 
-      <div className="blop2" style={{ top: "129%", right: "6%" }}></div>
-      <div className="blop1" style={{ top: "190%", left: "9%" }}></div>
-      <div className="blop2" style={{ top: "250%", right: "4%" }}></div>
+      <div className="blop1" style={{ top: "140%", right: "6%" }}></div>
+      <div className="blop2" style={{ top: "220%", left: "6%" }}></div>
 
       <BrowserRouter>
         <Routes>
