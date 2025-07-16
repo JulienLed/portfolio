@@ -100,7 +100,7 @@ h1 {
   margin-top: 20vh;
   color: var(--white);
   font-family: var(--font);
-  font-size: 4rem;
+  font-size: 5vw;
   font-weight: 700;
   line-height: 1.2;
   z-index: 7;
