@@ -6,13 +6,13 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { ButtonSliderNext, ButtonSliderPrev } from "./Button";
 
-function Projets() {
+function Projets({ projectRef }) {
   const [opacity, setOpacity] = useState(1);
   const videoRef = useRef(null);
 
   //Slider settings
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -48,7 +48,7 @@ function Projets() {
   }, []);
 
   return (
-    <div style={{ opacity }}>
+    <div ref={projectRef} style={{ opacity }}>
       <h3>Projets</h3>
       <div className={styles.projets}>
         <Slider {...settings}>

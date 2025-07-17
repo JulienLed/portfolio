@@ -8,20 +8,26 @@ import { useRef } from "react";
 
 function Home() {
   const aboutRef = useRef(null);
-  const handleClick = () => {
-    if (aboutRef) {
+  const projectRef = useRef(null);
+  const contactRef = useRef(null);
+  const handleClick = (section) => {
+    if (section === "about" && aboutRef) {
       aboutRef.current.scrollIntoView({ behavior: "smooth" });
+    } else if (section === "project" && projectRef) {
+      projectRef.current.scrollIntoView({ behavior: "smooth" });
+    } else if (section === "contact" && contactRef) {
+      contactRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
     <>
-      <Navbar />
+      <Navbar handleClick={handleClick} />
       <Banner />
       <ButtonScrollDown handleClick={handleClick} />
       <AboutMe aboutRef={aboutRef} />
-      <Projets />
-      <Contact />
+      <Projets projectRef={projectRef} />
+      <Contact contactRef={contactRef} />
     </>
   );
 }

@@ -1,10 +1,9 @@
 import styles from "./Button.module.css";
 import arrow from "../assets/arrow.png";
-import { useRef } from "react";
 
 export function ButtonScrollDown({ handleClick }) {
   return (
-    <div onClick={handleClick} className={styles.arrow}>
+    <div onClick={() => handleClick("about")} className={styles.arrow}>
       <div className={styles.line1}></div>
       <div className={styles.line2}></div>
       <div className={styles.line3}></div>

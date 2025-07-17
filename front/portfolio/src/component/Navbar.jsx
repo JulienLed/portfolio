@@ -1,13 +1,19 @@
 import "../App.css";
 import styles from "./Navbar.module.css";
 
-function Navbar() {
+function Navbar({ handleClick }) {
   return (
     <>
       <div className={styles.navbar}>
-        <span className={styles.one}>À propos</span>
-        <span className={styles.two}>Projets</span>
-        <span className={styles.three}>Contact</span>
+        <span onClick={() => handleClick("about")} className={styles.one}>
+          À propos
+        </span>
+        <span onClick={() => handleClick("project")} className={styles.two}>
+          Projets
+        </span>
+        <span onClick={() => handleClick("contact")} className={styles.three}>
+          Contact
+        </span>
       </div>
       <div className={styles.navbar_bg}></div>
     </>
