@@ -4,11 +4,34 @@ import { useEffect, useState } from "react";
 function Contact({ contactRef }) {
   const [opacity, setOpacity] = useState(0);
   const [astTextOpacity, setAstTextOpacity] = useState(0);
+  const [mailInfo, setMailInfo] = useState({
+    name: "",
+    theme: "",
+    message: "",
+  });
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   //Gère l'envoi du mail via le formulaire
-  const handleSubmit = (e) => {
-    // e.preventDefault();
-    // alert("En construction. Le mail sera configuré prochainement");
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const response = await fetch(`${apiUrl}/mail`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: mailInfo.name,
+          theme: mailInfo.theme,
+          message: mailInfo.message,
+        }),
+      });
+      const responseJson = await response.json();
+      setMailInfo((prev) => ({ ...prev, name: "", theme: "", message: "" }));
+      alert(responseJson.message);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   //Change l'opacité du texte sous astérisque
@@ -42,18 +65,38 @@ function Contact({ contactRef }) {
           de votre projet ! <span>*</span>
         </p>
         <form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
-          <label for="name" className={styles.label}>
+          <label htmlFor="name" className={styles.label}>
             Votre nom
           </label>
-          <input id="name" className={styles.input} type="text"></input>
-          <label for="theme" className={styles.label}>
+          <input
+            onChange={(e) => {
+              setMailInfo((prev) => ({ ...prev, name: e.target.value }));
+            }}
+            value={mailInfo.name}
+            id="name"
+            className={styles.input}
+            type="text"
+          ></input>
+          <label htmlFor="theme" className={styles.label}>
             Thématique du contact
           </label>
-          <input id="theme" className={styles.input} type="text"></input>
-          <label for="message" className={styles.label}>
+          <input
+            onChange={(e) => {
+              setMailInfo((prev) => ({ ...prev, theme: e.target.value }));
+            }}
+            value={mailInfo.theme}
+            id="theme"
+            className={styles.input}
+            type="text"
+          ></input>
+          <label htmlFor="message" className={styles.label}>
             Votre message
           </label>
           <textarea
+            onChange={(e) => {
+              setMailInfo((prev) => ({ ...prev, message: e.target.value }));
+            }}
+            value={mailInfo.message}
             id="message"
             className={styles.textarea}
             cols={59}
