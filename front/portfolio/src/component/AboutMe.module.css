@@ -53,7 +53,7 @@ h3 {
 }
 
 .pointer {
-  z-index: 0;
+  z-index: 99;
   position: fixed;
   width: 150px;
   height: 150px;

@@ -3,7 +3,7 @@ import styles from "../component/AboutMe.module.css";
 
 const AboutMe = ({ aboutRef }) => {
   const pointerRef = useRef(null);
-  const [opacity, setOpacity] = useState(1);
+  const [opacity, setOpacity] = useState(0);
 
   // Pointeur qui suit la souris
   useEffect(() => {

@@ -1,0 +1,3 @@
+Il faudra faire un back avec une route pour le formulaire, pour envoyer le mail.
+
+Il faut rendre le site responsive

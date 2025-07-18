@@ -36,14 +36,16 @@ function Projets({ projectRef }) {
   useEffect(() => {
     const handleScroll = () => {
       const elementHeight = window.innerHeight;
-      const scrollTop = window.scrollY;
+      const element = projectRef.current;
+      const positionYElement = element.getBoundingClientRect();
 
-      let newOpacity = scrollTop / elementHeight;
+      let newOpacity = 1 - Math.abs(positionYElement.top) / elementHeight;
       newOpacity = Math.max(0, Math.min(1, newOpacity));
 
       setOpacity(newOpacity);
     };
     window.addEventListener("scroll", handleScroll);
+    handleScroll(projectRef);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
