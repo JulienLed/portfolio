@@ -20,7 +20,7 @@ body {
   height: 300px;
   background: radial-gradient(circle, var(--purple-1), var(--purple-2));
   border-radius: 50%;
-  filter: blur(120px);
+  filter: blur(200px);
 }
 .blop2 {
   position: absolute;
@@ -28,7 +28,7 @@ body {
   height: 300px;
   background: radial-gradient(circle, var(--blue-1), var(--blue-2));
   border-radius: 50%;
-  filter: blur(120px);
+  filter: blur(200px);
 }
 
 :root {
@@ -42,4 +42,13 @@ body {
 
   /*Font*/
   --font: "Tomorrow", sans-serif;
+}
+
+@media screen and (max-width: 375px) {
+  .blop1,
+  .blop2 {
+    width: 75px;
+    height: 75px;
+    filter: blur(50px);
+  }
 }

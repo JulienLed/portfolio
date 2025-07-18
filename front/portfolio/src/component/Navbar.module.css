@@ -69,3 +69,7 @@
   transition: text-shadow ease-in 0.1s;
   cursor: pointer;
 }
+
+@media screen and (max-width: 375px) {
+  /*A adapter*/
+}
