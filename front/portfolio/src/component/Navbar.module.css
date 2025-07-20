@@ -7,7 +7,7 @@
   margin: 1vw 0;
   gap: 7vw;
   font-family: var(--font);
-  font-size: 1.5vw;
+  font-size: 1.5rem;
   z-index: 99;
   top: 0;
   left: 0;
@@ -30,8 +30,8 @@
 .navbar span {
   display: inline-block;
   color: var(--white);
-  font-size: 1.5rem;
-  -webkit-text-stroke: 1px black;
+  font-size: clamp(0.6rem, 1.5vw, 1.5rem);
+  text-shadow: 0 0 clamp(0.2px, 0.2vw, 1px) black;
   opacity: 0;
   transition: text-shadow ease-out 0.3s;
 }
@@ -70,6 +70,13 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 375px) {
-  /*A adapter*/
+@media screen and (max-width: 500px) {
+  .navbar_bg {
+    height: 4vh;
+    gap: 3vw;
+  }
+
+  .navbar span {
+    font-size: 0.8rem;
+  }
 }

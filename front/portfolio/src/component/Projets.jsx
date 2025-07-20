@@ -6,8 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { ButtonSliderNext, ButtonSliderPrev } from "./Button";
 
-function Projets({ projectRef }) {
-  const [opacity, setOpacity] = useState(1);
+function Projets({ projectRef, isVisible }) {
   const videoRef = useRef(null);
 
   //Slider settings
@@ -32,27 +31,10 @@ function Projets({ projectRef }) {
     }
   }, []);
 
-  // Afficher progressivement quand on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      const elementHeight = window.innerHeight;
-      const element = projectRef.current;
-      const positionYElement = element.getBoundingClientRect();
-
-      let newOpacity = 1 - Math.abs(positionYElement.top) / elementHeight;
-      newOpacity = Math.max(0, Math.min(1, newOpacity));
-
-      setOpacity(newOpacity);
-    };
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(projectRef);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div ref={projectRef} style={{ opacity }}>
+    <div ref={projectRef}>
       <h3>Projets</h3>
-      <div className={styles.projets}>
+      <div className={`${styles.projets} ${isVisible ? styles.visible : ""}`}>
         <Slider {...settings}>
           <div className={styles.project1}>
             <div className={styles.project1Text}>

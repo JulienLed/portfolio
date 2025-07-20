@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "../component/AboutMe.module.css";
 
-const AboutMe = ({ aboutRef }) => {
+const AboutMe = ({ aboutRef, isVisible }) => {
   const pointerRef = useRef(null);
-  const [opacity, setOpacity] = useState(0);
 
   // Pointeur qui suit la souris
   useEffect(() => {
@@ -17,25 +16,13 @@ const AboutMe = ({ aboutRef }) => {
     return () => document.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  // Afficher progressivement quand on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      const elementHeight = window.innerHeight;
-      const scrollTop = window.scrollY;
-
-      let newOpacity = scrollTop / elementHeight;
-      newOpacity = Math.max(0, Math.min(1, newOpacity));
-
-      setOpacity(newOpacity);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <>
       <div ref={pointerRef} className={styles.pointer}></div>
-      <div ref={aboutRef} className={styles.aboutMe} style={{ opacity }}>
+      <div
+        ref={aboutRef}
+        className={`${styles.aboutMe} ${isVisible ? styles.visible : ""}`}
+      >
         <h3>A Propos de moi</h3>
         <p>
           <span>Développeur Full Stack</span> autodidacte, je suis également

@@ -1,8 +1,7 @@
 import styles from "./Contact.module.css";
 import { useEffect, useState } from "react";
 
-function Contact({ contactRef }) {
-  const [opacity, setOpacity] = useState(0);
+function Contact({ contactRef, isVisible }) {
   const [astTextOpacity, setAstTextOpacity] = useState(0);
   const [mailInfo, setMailInfo] = useState({
     name: "",
@@ -39,25 +38,11 @@ function Contact({ contactRef }) {
     astTextOpacity === 0 ? setAstTextOpacity(1) : setAstTextOpacity(0);
   };
 
-  // Afficher progressivement quand on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      const elementHeight = window.innerHeight;
-      const element = contactRef.current;
-      const positionYElement = element.getBoundingClientRect();
-
-      let newOpacity = 1 - Math.abs(positionYElement.top) / elementHeight;
-      newOpacity = Math.max(0, Math.min(1, newOpacity));
-
-      setOpacity(newOpacity);
-    };
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(contactRef);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div ref={contactRef} style={{ opacity }} className={styles.contact}>
+    <div
+      ref={contactRef}
+      className={`${styles.contact} ${isVisible ? styles.visible : ""}`}
+    >
       <h3>Contact</h3>
       <div className={styles.contactForm}>
         <p>

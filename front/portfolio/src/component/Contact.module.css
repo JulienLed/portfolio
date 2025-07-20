@@ -5,6 +5,7 @@
   margin: 10vw 0;
   color: var(--white);
   font-family: var(--font);
+  opacity: 0;
 }
 
 .contactForm {
@@ -51,7 +52,7 @@
   border: 2px solid var(--white);
   border-radius: 10px;
   margin: 1.5vw 0;
-  font-size: 1.4rem !important;
+  font-size: 1.4rem;
   color: var(--white);
   font: var(--font);
   transition: box-shadow 0.2s ease-in-out;
@@ -161,5 +162,67 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.visible {
+  animation: fadeInUp 2s ease forwards;
+}
+
+@media screen and (max-width: 500px) {
+  .contact {
+    margin: 5vw 0;
+  }
+  .contact h3 {
+    font-size: 1.5rem;
+  }
+
+  .contact p {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+  .input[type="text"] {
+    min-width: 15vw;
+    max-width: 20vw;
+    height: 20px;
+  }
+  .input[type="text"],
+  .textarea {
+    font-size: 0.7rem;
+  }
+  .submitButton {
+    min-width: 100px;
+    height: 5vh;
+    font-size: 1rem;
+    background-size: 100% 200%;
+    background-position: 0% 0%;
+  }
+
+  .ast {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  .astText {
+    font-size: 0.5rem;
+    margin-bottom: 0;
+  }
+  .visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
 }

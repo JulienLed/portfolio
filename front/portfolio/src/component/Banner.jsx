@@ -3,25 +3,8 @@ import styles from "./Banner.module.css";
 import photo from "../assets/Photo Ju.png";
 
 function Banner() {
-  const [opacity, setOpacity] = useState(1);
-
-  // Afficher progressivement quand on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      const elementHeight = window.innerHeight;
-      const scrollTop = window.scrollY;
-
-      let newOpacity = (elementHeight - scrollTop) / elementHeight;
-      newOpacity = Math.max(0, Math.min(1, newOpacity));
-
-      setOpacity(newOpacity);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div className={styles.banner} style={{ opacity }}>
+    <div className={styles.banner}>
       <h1 className={styles}>Julien, Developpeur Web</h1>
       <div className={styles.line3WordsContainer}>
         <div className={styles.line}></div>

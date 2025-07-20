@@ -153,3 +153,37 @@ h1 {
     opacity: 1;
   }
 }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.aboutMe {
+  opacity: 0;
+}
+
+.visible {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@media screen and (max-width: 500px) {
+  .descript3Words {
+    font-size: 0.75rem;
+  }
+  .photo,
+  .img_blur {
+    width: 20vw !important;
+    margin-top: 5vw;
+  }
+
+  .devAs {
+    font-size: 1.5rem;
+    margin-top: 10vw;
+  }
+}

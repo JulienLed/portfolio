@@ -8,27 +8,63 @@ html {
 
 body {
   width: 100%;
-  min-height: 100vh;
   margin: 0;
   padding: 0;
   background-color: #0e0e10;
 }
 
-.blop1 {
+.blop1,
+.blop3,
+.blop5,
+.blop7 {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: clamp(75px, 15vw, 300px);
+  height: clamp(75px, 15vw, 300px);
   background: radial-gradient(circle, var(--purple-1), var(--purple-2));
   border-radius: 50%;
   filter: blur(200px);
+  z-index: -1;
 }
-.blop2 {
+.blop2,
+.blop4,
+.blop6 {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: clamp(75px, 15vw, 300px);
+  height: clamp(75px, 15vw, 300px);
   background: radial-gradient(circle, var(--blue-1), var(--blue-2));
   border-radius: 50%;
   filter: blur(200px);
+  z-index: -1;
+}
+
+/* Positions réparties sur toute la hauteur */
+.blop1 {
+  top: 4%;
+  left: 6%;
+}
+.blop2 {
+  top: 20%;
+  right: 6%;
+}
+.blop3 {
+  top: 100%;
+  left: 20%;
+}
+.blop4 {
+  top: 150%;
+  right: 15%;
+}
+.blop5 {
+  top: 220%;
+  left: 6%;
+}
+.blop6 {
+  top: 290%;
+  right: 15%;
+}
+.blop7 {
+  top: 370%;
+  left: 6%;
 }
 
 :root {
@@ -44,11 +80,22 @@ body {
   --font: "Tomorrow", sans-serif;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 500px) {
   .blop1,
-  .blop2 {
+  .blop2,
+  .blop3,
+  .blop4,
+  .blop5,
+  .blop6,
+  .blop7 {
     width: 75px;
     height: 75px;
-    filter: blur(50px);
+    filter: blur(75px);
+  }
+  body {
+    margin-bottom: 0;
+  }
+  html {
+    margin-bottom: 0;
   }
 }
